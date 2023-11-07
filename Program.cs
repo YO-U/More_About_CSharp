@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace MyApp
 {
@@ -6,20 +7,24 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            Queue<string> queue = new Queue<string>();// FIFO first in first out первый зашел первый вышел
+            Stack<int> stack = new Stack<int>();// FILO dorst in last out первый вошел последний вышел 
 
-            queue.Enqueue("Vasa");//добавить элемент
-            queue.Enqueue("Roma");
-            queue.Enqueue("Goga");
-            queue.Enqueue("Popka");
+            stack.Push(1);//добавляет 
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            stack.Push(6);
 
-            foreach (var item in queue)
+            while (stack.Count > 0)
             {
-                Console.WriteLine(item);
+               Console.WriteLine(stack.Pop());//выводит элементы 
             }
-            Console.WriteLine(queue.Dequeue());//использует первый по списку элемент и убирает его
-            Console.WriteLine(queue.Peek());//показывает какой элемент будет после первого
 
+            foreach (int i in stack) // хз не работает гавно
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
