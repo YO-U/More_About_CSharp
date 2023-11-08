@@ -7,24 +7,29 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            Stack<int> stack = new Stack<int>();// FILO dorst in last out первый вошел последний вышел 
+          Dictionary<int,string> dic = new Dictionary<int,string>();
+            dic.Add(1, "Петя1");//добавление
+            dic.Add(2, "Петя2");
+            dic.Add(3, "Петя3");
 
-            stack.Push(1);//добавляет 
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
-            stack.Push(5);
-            stack.Push(6);
-
-            while (stack.Count > 0)
+            if (dic.ContainsKey(1))//проверка на наличие ключа
             {
-               Console.WriteLine(stack.Pop());//выводит элементы 
+                Console.WriteLine(dic[1]);// Вывод данного с этим ключом 
             }
 
-            foreach (int i in stack) // хз не работает гавно
+            foreach (var item in dic)//перебор по элементам 
             {
-                Console.WriteLine(i);
+                Console.WriteLine( item.Key +" "+ item.Value);
             }
+            foreach (var item in dic.Keys)//перебор по ключам
+            {
+                Console.WriteLine(item);
+            }
+            foreach (var item in dic.Values)// перебор по значениям ключей
+            {
+                Console.WriteLine(item);
+            }
+            dic.Remove(1);//удаление элемента по ключу
         }
     }
 }
